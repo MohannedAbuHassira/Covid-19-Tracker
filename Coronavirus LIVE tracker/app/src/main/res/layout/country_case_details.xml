@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/country_case_details"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="@drawable/rounded_background_at_bottom"
+    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:paddingTop="16dp">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:srcCompat="@drawable/ic_covid" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        app:srcCompat="@drawable/ic_covid" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/country_icon_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wide4" />
+
+        <TextView
+            android:id="@+id/text_view_country_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Country name"
+            android:textColor="@color/whit"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <org.eazegraph.lib.charts.PieChart
+        android:id="@+id/piechart"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:egLegendHeight="0dp"
+        app:egLegendTextSize="0sp"
+        app:egUsePieRotation="true"
+        app:egValueTextSize="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <View
+        android:id="@+id/count_color"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@color/yellow_pie"
+        app:layout_constraintBottom_toBottomOf="@+id/count_text"
+        app:layout_constraintEnd_toStartOf="@+id/count_text"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/count_recovered_id_color"
+        app:layout_constraintTop_toTopOf="@+id/count_text" />
+
+    <TextView
+        android:id="@+id/count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Confirmed"
+        android:textColor="@color/whit"
+        app:layout_constraintBottom_toTopOf="@+id/count_deaths_id"
+        app:layout_constraintEnd_toEndOf="@+id/count_recovered_id"
+        app:layout_constraintStart_toEndOf="@+id/count_color"
+        app:layout_constraintTop_toBottomOf="@+id/count_recovered_id" />
+
+    <View
+        android:id="@+id/count_recovered_id_color"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@color/green_pie"
+        app:layout_constraintBottom_toBottomOf="@+id/count_recovered_id"
+        app:layout_constraintEnd_toStartOf="@+id/count_recovered_id"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/count_recovered_id" />
+
+    <TextView
+        android:id="@+id/count_recovered_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Recovered"
+        android:textColor="@color/whit"
+        app:layout_constraintBottom_toTopOf="@+id/count_text"
+        app:layout_constraintEnd_toStartOf="@+id/piechart"
+        app:layout_constraintStart_toEndOf="@+id/count_recovered_id_color"
+        app:layout_constraintTop_toTopOf="@+id/piechart"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/count_deaths_id_color"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@color/red_pie"
+        app:layout_constraintBottom_toBottomOf="@+id/count_deaths_id"
+        app:layout_constraintEnd_toStartOf="@+id/count_deaths_id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/count_color"
+        app:layout_constraintTop_toTopOf="@+id/count_deaths_id" />
+
+    <TextView
+        android:id="@+id/count_deaths_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deaths"
+        android:textColor="@color/whit"
+        app:layout_constraintBottom_toBottomOf="@+id/piechart"
+        app:layout_constraintEnd_toEndOf="@+id/count_text"
+        app:layout_constraintStart_toEndOf="@+id/count_deaths_id_color"
+        app:layout_constraintTop_toBottomOf="@+id/count_text" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:srcCompat="@drawable/ic_covid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
